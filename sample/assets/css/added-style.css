@@ -1,0 +1,80 @@
+#container-2 {
+  padding-right:50%;
+  /*padding-top:10%;*/
+  padding-bottom:10%;
+}
+
+#text-center-main {
+  font-size:300%;
+  padding-top:7%;
+}
+
+.logo-div {
+  padding-top:7%;
+  padding-right:11%;
+  /*margin-top:0%;*/
+}
+
+.brand-logo {
+  /*padding-bottom:144%;*/
+  float:right;
+  width:20%;
+}
+
+#email-subscribe {
+  padding-top:7%;
+  padding-bottom:7%;
+}
+
+#zoom {
+  position:relative;
+  /*width:480px;*/
+  /*height:320px;*/
+  overflow:hidden;
+  -webkit-transition:0.6s ease;
+  transition:0.6s ease;
+  /*-webkit-transition:0.6s ease;*/
+  /*transition:0.6s ease;*/
+}
+
+#zoom:hover {
+  /*padding:10%;*/
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+}
+
+#icon-service {
+  width:60%;
+}
+
+#icon-service-design {
+  width:47%;
+}
+
+#icon-service-sale {
+  width:39.3%;
+}
+
+#icon-service-phone {
+  width:64.5%;
+}
+
+#text-center {
+  margin-top:-9%;
+  padding-left:13%;
+}
+
+#top-bar-logo {
+  width:7%;
+  margin-left:0.5%;
+}
+
+#nav-bar {
+  margin-top:-5%;
+  margin-left:7%;
+}
+
+#nav-bar-logo-text {
+  margin-left:-2%;
+}
+
