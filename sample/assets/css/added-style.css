@@ -16,9 +16,9 @@
 }
 
 .brand-logo {
-  /*padding-bottom:144%;*/
   float:right;
   width:20%;
+  padding-top:3%;
 }
 
 #email-subscribe {
@@ -65,16 +65,53 @@
 }
 
 #top-bar-logo {
-  width:7%;
-  margin-left:0.5%;
+  width:24%;
 }
 
 #nav-bar {
   margin-top:-5%;
-  margin-left:7%;
+  /*margin-left:7%;*/
 }
 
 #nav-bar-logo-text {
-  margin-left:-2%;
+  /*margin-left:0%;*/
+}
+
+#top-container {
+  padding-top:3%;
+}
+
+#admin-logo {
+  width:60%;
+}
+
+#contact_us {
+  padding-bottom:7%;
+  padding-top:5%;
+}
+
+#heading_getInTouch {
+  text-align:center;
+}
+
+#row_getInTouch {
+  padding-top:6%;
+  padding-bottom:6%;
+}
+
+#column_1 {
+  padding-bottom:10%;
+}
+
+#heading4 {
+  padding-top:9%;
+}
+
+#top-nav {
+  padding-left:12%;
+}
+
+#block-location {
+  /*margin-top:-5%;*/
 }
 
