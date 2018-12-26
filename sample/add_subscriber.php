@@ -2,6 +2,7 @@
 
 	include 'config.php';
 
+    //add subscriber
 	function add_subscriber($email){
 	    
 	    global $conn;
