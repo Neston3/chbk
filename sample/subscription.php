@@ -6,11 +6,12 @@ use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
+require_once('add_subscriber.php');
 
 $btn_submit=$_POST['btn-submit'];
 $email=$_POST['email'];
 
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+$mail = new PHPMailer(true); // Passing `true` enables exceptions
 
 if(isset($btn_submit)){
     if(!empty($email)){
@@ -43,6 +44,7 @@ if(isset($btn_submit)){
         
             //check if email is sent or not
             if($mail->send()){
+                add_subscriber($email);
                 echo '<script type="text/javascript">'; 
                 echo 'alert("Email has be submitted");'; 
                 echo 'window.location.href = "index.html";';
@@ -55,7 +57,7 @@ if(isset($btn_submit)){
             }
             
         } catch (Exception $e) {
-            
+            add_subscriber();
             echo '<script type="text/javascript">'; 
             echo 'alert("Server error please retry");'; 
             echo 'window.location.href = "index.html";';
