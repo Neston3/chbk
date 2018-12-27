@@ -2,7 +2,7 @@
 	include 'config.php';
 
 	$image=" 
-		SELECT image_name FROM image WHERE category='Tailoring'
+		SELECT image_name FROM image WHERE category='embroidering'
 	";
 
 	$data=mysqli_query($conn,$image);

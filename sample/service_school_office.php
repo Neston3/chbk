@@ -1,10 +1,10 @@
+<?php include 'load_school_office.php'; ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bongobespoke</title>
+    <title>bongo</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -31,59 +31,59 @@
 </head>
 
 <body>
-    <div class="highlight-clean">
-        <div class="logo-div"><img src="assets/img/logo.jpg" class="brand-logo"></div>
-        <div class="container" id="container-2">
-            <div class="intro">
-                <h2 class="text-center" id="text-center-main">bongobespoke</h2>
-                <p id="text-center"><br>Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.<br><br></p>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean" id="nav-bar">
+            <div class="container" id="top-container"><a class="navbar-brand" href="#" id="nav-bar-logo-text"><img src="assets/img/logo.jpg" id="top-bar-logo"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="contact_us.html">Contact Us</a></li>
+                    </ul>
             </div>
-        </div>
     </div>
-    <div class="features-boxed">
+    </nav>
+    </div>
+    <div class="photo-gallery">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Our Services</h2>
-                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+                <h2 class="text-center">Gallery</h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
-            <div class="row justify-content-center features">
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><img src="assets/img/ODHHVO0.jpg" id="icon-service">
-                        <h3 class="name">Embroidering</h3>
-                        <p class="description">Get personalized logos, and fabrics prints on your clothing, have your business branded by the finest of threads from bongobespoke</p><a href="service_embr.php" class="learn-more">Learn more »</a></div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><img src="assets/img/27183.jpg" id="icon-service-sale">
-                        <h3 class="name">Home fabrics</h3>
-                        <p class="description">Why be like everyone else? Style your home with best of fabrics designs from curtains to cushions improve your home decor</p><a href="service_fabric.php" class="learn-more">Learn more »</a></div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><img src="assets/img/Badges-01.jpg" id="icon-service-design">
-                        <h3 class="name">Schools and Offices</h3>
-                        <p class="description">For the smartest of uniforms with the best of fabrics work with bongobespoke to value your money and increase efficiency through properly designed uniforms</p><a href="service_school_office.php" class="learn-more">Learn more »</a></div>
-                </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><img src="assets/img/ODHHVO0.jpg" id="icon-service">
-                        <h3 class="name">Tailoring</h3>
-                        <p class="description">Every design for every gender work with us for the luxurious at fair prices, everything is bespke</p><a href="service_copy.php" class="learn-more">Learn more »</a></div>
-                </div>
-                </div>
+            <div class="row photos">
+                
+                <?php
+                    
+                    while ($row=mysqli_fetch_array($data)) {
+                        $image_name=$row['image_name'];
+                
+                        $files = glob("image/$image_name");     
+                        for ($i = 0; $i < count($files); $i++) {
+                            $image = $files[$i];
+                            
+                            echo '<div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom">
+                            <a href="' . $image . '" data-lightbox="photos">';
+                    
+                            echo '<img class="img-fluid" src="' . $image . '" alt="Random image"/></a>
+                            </div>';
+                    
+                        }
+                        
+                    }
+                
+                    
+                    ?>
             </div>
         </div>
     </div>
-
-
-
-
     <div id="email-subscribe" class="newsletter-subscribe">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Subscribe to bongobespoke</h2>
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
-            <form class="form-inline" method="post" action="subscription.php">
+            <form class="form-inline" method="post">
                 <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
-                <div class="form-group"><button class="btn btn-primary" type="submit" name="btn-submit">Subscribe</button></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>
             </form>
         </div>
     </div>
