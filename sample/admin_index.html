@@ -43,21 +43,24 @@
             </ul>
         </div>
        
-        <div id="wrapper">
+        <div id="wrapper" class="wrapper2">
             <form action="upload_file.php" method="post" enctype="multipart/form-data">
               <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
               <input type="submit" name='submit_image' value="Upload Image" id="submit_btn" />
+              <select name="taskoption" title="Pick a number" class="selectpicker" id="select_option">
+                  <option value="0">Select...</option>
+                  <option value="embroidering">Embroidering</option>
+                  <option value="Cloth branding">Cloth branding</option>
+                  <option value="Design">Design</option>
+                  <option value="Tailoring">Tailoring</option>
+                  <option value="Retail sale">Retail sale</option>
+              </select>   
             </form>
             <div id="image_preview"></div>
-            <select title="Pick a number" class="selectpicker" id="select_option">
-              <option>Select...</option>
-              <option>Embroidering</option>
-              <option>Cloth branding</option>
-              <option>Design</option>
-              <option>Tailoring</option>
-              <option>Retail sale</option>
-            </select>   
         </div>
+
+
+
        
     </div>
     

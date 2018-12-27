@@ -119,3 +119,18 @@
   /*margin-top:11%;*/
 }
 
+#select_option{
+  width: 25%;
+  border-radius: 5%;
+  padding: 1%;
+}
+
+.wrapper2{
+  padding-top: 5%;
+  margin-left: -10%;
+}
+
+#upload_file{
+  /*background: black;*/
+}
+

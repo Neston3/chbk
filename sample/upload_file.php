@@ -4,8 +4,10 @@
 
 	$folder="image";
 
+    $option=$_POST['taskoption'];
 
-	if(isset($_POST['submit_image']))
+
+	if(isset($_POST['submit_image']) && !empty($option))
 	{
 		//if file is not present, make it
 		if (!file_exists($folder)) {
@@ -19,12 +21,12 @@
 			
 			 move_uploaded_file($uploadfile, "$folder/$name");
 
-			 //save the filename to database
+			 //save the filename to database "DESIGN"
 			 $image_query="
 			 	INSERT INTO image (image_name,category)
-				SELECT * FROM (SELECT '$name','design') AS tmp
+				SELECT * FROM (SELECT '$name','$option') AS tmp
 				WHERE NOT EXISTS (
-				    SELECT image_name FROM image WHERE image_name='$name' and category='design'
+				    SELECT image_name FROM image WHERE image_name='$name' and category='$option'
 				)
 			 ";
 
@@ -42,4 +44,9 @@
 			 }
 		}
 		exit();
+	}else{
+	    	echo '<script type="text/javascript">'; 
+            echo 'alert("Please select your category");'; 
+            echo 'window.location.href = "admin_index.html";';
+            echo '</script>';
 	}
