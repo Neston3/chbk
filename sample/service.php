@@ -1,6 +1,6 @@
+<?php include 'load.php'; ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,14 +50,28 @@
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <div class="row photos">
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/desk.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/building.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/loft.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/building.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/loft.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/desk.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/desk.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/building.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/building.jpg"></a></div>
-                <div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom"><a href="assets/img/loft.jpg" data-lightbox="photos"><img class="img-fluid" src="assets/img/loft.jpg"></a></div>
+                
+                <?php
+                    
+                    while ($row=mysqli_fetch_array($data)) {
+                        $image_name=$row['image_name'];
+                
+                        $files = glob("image/$image_name");     
+                        for ($i = 0; $i < count($files); $i++) {
+                            $image = $files[$i];
+                            
+                            echo '<div class="col-sm-6 col-md-4 col-lg-3 item" id="zoom">
+                            <a href="' . $image . '" data-lightbox="photos">';
+                    
+                            echo '<img class="img-fluid" src="' . $image . '" alt="Random image"/></a>
+                            </div>';
+                    
+                        }
+                        
+                    }
+                
+                    
+                    ?>
             </div>
         </div>
     </div>

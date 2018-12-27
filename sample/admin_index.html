@@ -46,9 +46,17 @@
         <div id="wrapper">
             <form action="upload_file.php" method="post" enctype="multipart/form-data">
               <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
-              <input type="submit" name='submit_image' value="Upload Image"/>
+              <input type="submit" name='submit_image' value="Upload Image" id="submit_btn" />
             </form>
             <div id="image_preview"></div>
+            <select title="Pick a number" class="selectpicker" id="select_option">
+              <option>Select...</option>
+              <option>Embroidering</option>
+              <option>Cloth branding</option>
+              <option>Design</option>
+              <option>Tailoring</option>
+              <option>Retail sale</option>
+            </select>   
         </div>
        
     </div>
